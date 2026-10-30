@@ -354,11 +354,6 @@ img.missing-image {
 .hero {
   min-height: clamp(600px, 47.65vw, 904px);
 }
-.hero::before,
-.hero::after {
-  display: none !important;
-  content: none !important;
-}
 .hero-inner > div:first-child {
   visibility: visible !important;
   display: block !important;
@@ -477,4 +472,7 @@ img.missing-image {
 
 .hero h1 em {
   color: #f6dfcd;
+}
+.leadform .eyebrow {
+  color: #663a3c !important;
 }
