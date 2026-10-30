@@ -476,3 +476,79 @@ img.missing-image {
 .leadform .eyebrow {
   color: #663a3c !important;
 }
+/* AN BUILDCON FOOTER */
+
+.footer-company .footer-label {
+  color: #d8ad89;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer-company-logo {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  object-fit: contain;
+}
+
+.footer-company h3 {
+  color: #ffffff;
+  font-size: 30px;
+  margin: 18px 0 10px;
+}
+
+.footer-company-desc {
+  color: #eadbd5;
+  max-width: 330px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.footer-contact-label {
+  color: #d8ad89;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 18px 0 8px;
+}
+
+.footer-phone {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-phone:hover {
+  color: #d8ad89;
+}
+
+.footer-enquiry-btn {
+  display: block;
+  width: fit-content;
+  margin-top: 24px;
+  color: #ffffff;
+}
+
+@media (max-width: 760px) {
+  .footer-company-logo {
+    width: 160px;
+  }
+
+  .footer-company h3 {
+    font-size: 26px;
+  }
+
+  .footer-phone {
+    font-size: 18px;
+  }
+}
