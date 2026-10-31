@@ -48,7 +48,7 @@ h3,
   color: #46252b;
 }
 .hero {
-  background: #f3e4d8 url("../images/hero.png") center center / cover no-repeat;
+  background: #f3e4d8 url("../images/hero1.jpeg") center center / cover no-repeat;
   min-height: 720px;
 }
 .hero:before {
@@ -162,8 +162,7 @@ h3,
   background: #6e3e48 url("../images/cta.png") center / cover no-repeat;
 }
 .video-card {
-  background: #6e3e48 url("../images/walkthrough-cover.png") center / cover
-    no-repeat;
+  background: #6e3e48 url("../images/walkthrough-cover.png") center / cover no-repeat;
 }
 .footer {
   background: #3e2229;
@@ -215,10 +214,7 @@ h3,
 .gallery-grid img {
   background: #e8d4ca;
 }
-img.missing-image {
-  opacity: 1;
-  pointer-events: auto;
-}
+img.missing-image { opacity: 1; pointer-events: auto; }
 .image-placeholder {
   position: absolute;
   left: 50%;
@@ -319,236 +315,96 @@ img.missing-image {
   opacity: 1 !important;
   mix-blend-mode: normal;
 }
-.image-collage > img:first-child {
-  width: 80%;
-  height: 500px;
-}
-.image-collage > img:nth-child(2) {
-  width: 48%;
-  height: 300px;
-}
-.res-image {
-  height: 250px;
-}
-.res-image img {
-  display: block;
-}
-.amenity-photo {
-  height: 540px;
-}
-.location-photo {
-  height: 460px;
-}
-.why-photo {
-  height: 520px;
-}
-.gallery-grid img {
-  min-width: 0;
-  min-height: 0;
-}
-.gallery-grid .image-placeholder {
-  display: none;
-}
+.image-collage > img:first-child { width: 80%; height: 500px; }
+.image-collage > img:nth-child(2) { width: 48%; height: 300px; }
+.res-image { height: 250px; }
+.res-image img { display: block; }
+.amenity-photo { height: 540px; }
+.location-photo { height: 460px; }
+.why-photo { height: 520px; }
+.gallery-grid img { min-width: 0; min-height: 0; }
+.gallery-grid .image-placeholder { display: none; }
 
 /* The hero image is 1897×904; matching its ratio helps prevent desktop cropping. */
-.hero {
-  min-height: clamp(600px, 47.65vw, 904px);
+.hero { min-height: clamp(600px, 47.65vw, 904px); }
+.hero::after { display: none !important; content: none !important; }
+.hero-inner > div:first-child { visibility: visible !important; display: block !important; }
+.hero .hero-copy, .hero h1, .hero .hero-notes { text-shadow: 0 2px 12px #1e142b6b; }
+
+@media (max-width: 760px) {
+  .image-collage > img:first-child { height: 390px; }
+  .image-collage > img:nth-child(2) { height: 235px; }
+  .amenity-photo, .location-photo, .why-photo { height: 370px; }
+  .hero { min-height: 760px; background-position: 37% center; }
 }
-.hero-inner > div:first-child {
-  visibility: visible !important;
+
+/* Current design refinements — compact header and clear hero text. */
+.topbar { height: 26px; font-size: 9px; }
+.header { height: 72px; }
+.brand-logo img { width: 115px; height: 54px; object-fit: contain; }
+.header .btn { padding: 12px 18px; }
+.hero { position: relative; isolation: isolate; }
+.hero::before {
+  content: "" !important;
   display: block !important;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,.58) 0%, rgba(0,0,0,.38) 30%,
+    rgba(0,0,0,.10) 52%, transparent 70%) !important;
+  z-index: 0;
+  pointer-events: none;
 }
-.hero .hero-copy,
-.hero h1,
-.hero .hero-notes {
-  text-shadow: 0 2px 12px #1e142b6b;
-}
-
-@media (max-width: 760px) {
-  .image-collage > img:first-child {
-    height: 390px;
-  }
-  .image-collage > img:nth-child(2) {
-    height: 235px;
-  }
-  .amenity-photo,
-  .location-photo,
-  .why-photo {
-    height: 370px;
-  }
-  .hero {
-    min-height: 760px;
-    background-position: 37% center;
-  }
-}
-/* ABOUT SECTION — SINGLE IMAGE */
-
-.intro .image-collage {
-  position: relative;
-  width: 100%;
-  height: 550px;
-  min-height: 0;
-  overflow: hidden;
-  background: transparent;
-  border-radius: 12px;
-}
-
-.intro .image-collage > img:first-child {
-  display: block;
-  position: static;
-  width: 100%;
-  height: 100%;
-  object-fit: contain !important;
-  object-position: center;
-  border: none;
-  border-radius: 12px;
-  background: transparent;
-}
-
-.intro .image-collage > img:nth-child(2),
-.intro .image-collage .round-stamp,
-.intro .image-collage .image-placeholder {
-  display: none !important;
-}
-
-/* MOBILE */
-
-@media (max-width: 760px) {
-  .intro .image-collage {
-    height: 350px;
-  }
-
-  .intro .image-collage > img:first-child {
-    width: 100%;
-    height: 100%;
-    object-fit: contain !important;
-  }
-}
-/* HERO — LEFT TO RIGHT LIGHT GRADIENT */
-
+.hero-inner { position: relative; z-index: 1; }
 .hero-inner > div:first-child {
-  position: relative;
-  z-index: 1;
-  padding: 0;
-  border-radius: 0;
+  position: relative; z-index: 1; padding: 0;
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
+.hero h1, .hero .hero-copy, .hero .eyebrow, .hero .hero-notes { color: #fff; }
+.hero h1 em { color: #f6dfcd; }
+.leadform .eyebrow { color: #663a3c !important; }
 
-/* Gradient over hero image */
-.hero::before {
-  content: "";
-  display: block !important;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(28, 18, 25, 0.56) 0%,
-    rgba(28, 18, 25, 0.32) 28%,
-    rgba(28, 18, 25, 0.10) 48%,
-    transparent 65%
-  );
-  z-index: 0;
-  pointer-events: none;
+/* Single image in the About section. */
+.intro .image-collage {
+  position: relative; width: 100%; height: 550px; min-height: 0;
+  overflow: hidden; background: transparent; border-radius: 12px;
 }
+.intro .image-collage > img:first-child {
+  display: block; position: static; width: 100%; height: 100%;
+  object-fit: contain !important; border: none; border-radius: 12px;
+  background: transparent;
+}
+.intro .image-collage > img:nth-child(2),
+.intro .image-collage .round-stamp,
+.intro .image-collage .image-placeholder { display: none !important; }
 
-.hero::after {
-  display: none !important;
-}
-
-/* Text stays above gradient */
-.hero-inner {
-  position: relative;
-  z-index: 1;
-}
-
-.hero h1,
-.hero .hero-copy,
-.hero .eyebrow,
-.hero .hero-notes {
-  color: #ffffff;
-}
-
-.hero h1 em {
-  color: #f6dfcd;
-}
-.leadform .eyebrow {
-  color: #663a3c !important;
-}
-/* AN BUILDCON FOOTER */
-
+/* AN Buildcon marketing footer. */
 .footer-company .footer-label {
-  color: #d8ad89;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+  color: #d8ad89; font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
 }
-
 .footer-company-logo {
-  display: block;
-  width: 190px;
-  max-width: 100%;
-  height: auto;
-  padding: 12px;
-  border-radius: 8px;
-  background: #ffffff;
-  object-fit: contain;
+  display: block; width: 190px; max-width: 100%; height: auto;
+  padding: 12px; border-radius: 8px; background: #fff; object-fit: contain;
 }
-
-.footer-company h3 {
-  color: #ffffff;
-  font-size: 30px;
-  margin: 18px 0 10px;
-}
-
-.footer-company-desc {
-  color: #eadbd5;
-  max-width: 330px;
-  font-size: 13px;
-  line-height: 1.8;
-}
-
+.footer-company h3 { color: #fff; font-size: 30px; margin: 18px 0 10px; }
+.footer-company-desc { color: #eadbd5; max-width: 330px; font-size: 13px; line-height: 1.8; }
 .footer-contact-label {
-  color: #d8ad89;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin: 18px 0 8px;
+  color: #d8ad89; font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase; margin: 18px 0 8px;
 }
-
-.footer-phone {
-  display: inline-block;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.footer-phone:hover {
-  color: #d8ad89;
-}
-
-.footer-enquiry-btn {
-  display: block;
-  width: fit-content;
-  margin-top: 24px;
-  color: #ffffff;
-}
+.footer-phone { display: inline-block; color: #fff; font-size: 20px; font-weight: 600; text-decoration: none; }
+.footer-phone:hover { color: #d8ad89; }
+.footer-enquiry-btn { display: block; width: fit-content; margin-top: 24px; color: #fff; }
 
 @media (max-width: 760px) {
-  .footer-company-logo {
-    width: 160px;
-  }
-
-  .footer-company h3 {
-    font-size: 26px;
-  }
-
-  .footer-phone {
-    font-size: 18px;
-  }
+  .header { height: 64px; }
+  .brand-logo img { width: 105px; height: 50px; }
+  .navlinks { top: 64px; }
+  .intro .image-collage { height: 350px; }
+  .footer-company-logo { width: 160px; }
+  .footer-company h3 { font-size: 26px; }
+  .footer-phone { font-size: 18px; }
 }
