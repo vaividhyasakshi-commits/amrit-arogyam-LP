@@ -408,3 +408,11 @@ img.missing-image { opacity: 1; pointer-events: auto; }
   .footer-company h3 { font-size: 26px; }
   .footer-phone { font-size: 18px; }
 }
+.float-btn:not(.call) {
+  background: #25D366 !important;
+  color: #ffffff !important;
+}
+
+.float-btn:not(.call):hover {
+  background: #1ebe5d !important;
+}
